@@ -1,13 +1,106 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+}
+header{
+    position: fixed;
+    margin-bottom: 5px;
+    height: 60px;
+    width: 100%;
+    margin-top: 0;
+    top:0;
+    background-color: rgb(10, 80, 230);
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.menu{
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    float: left;
+    margin-top: 10px !important;
+    margin: 10px;      
+}
+main{
+    width: 100%;
+}
+#root{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:70px;
+    padding: 7%;
+    background-image: url("./background.jpg");
+    background-repeat: repeat;
+}
+.wraper{
+    width: 100%;  
+}
+.contact,.skills{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+    background-color: rgb(38, 237, 255);
+    padding: 5%;
+    padding-top: 3%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.contact{
+    float: right;
+}
+.info{
+    text-align: left;
+    margin-top: 5%;
+}
+.profile,.projects{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 60%;
+    background-color: rgb(196, 251, 45);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.projects{
+    float: right;
+}
+.profileImg{
+    margin: auto;
+}
+.project{
+    width: 40%;
+    margin: 5%;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.project:hover{
+    background-color: rgb(212, 212, 212);
+}
+ul{
+    width: 90%;
+}
+li{
+    font-size: 25px;
+    margin-bottom: 10%;
+}
+h1{
+    margin: 5% auto 5% auto;
+    width: 100%;
+    text-align: center;
+}
+h2{
+    margin: 10px;
+    color: white;
+}
+@media all and (max-width:750px){
+    .skills, .contact ,.profile, .projects{
+        float: none;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 3%;
+    }
 }
