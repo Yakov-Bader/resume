@@ -36,6 +36,4 @@ function Skill({skill}) {
     <li>{skill}</li>
     );
 }
-
-
 export default Projects;
