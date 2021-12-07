@@ -1,4 +1,3 @@
-
 *{
     top:0;
     bottom: 0;
@@ -6,7 +5,14 @@
     right: 0;
     margin: 0;
     padding: 0;
+    color: var(--dark);
 }
+:root{
+    --light:#F9F7F7;
+	--third:#DBE2EF;
+	--secondery:#3F72AF;
+    --dark:#112D4E;
+} 
 header{
     position: fixed;
     margin-bottom: 5px;
@@ -14,7 +20,7 @@ header{
     width: 100%;
     margin-top: 0;
     top:0;
-    background-color: rgb(10, 80, 230);
+    background-color: var(--dark);
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -34,7 +40,7 @@ main{
     flex-wrap: wrap;
     margin-top:70px;
     padding: 7%;
-    background-image: url("./background.jpg");
+    background-color: var(--light);
     background-repeat: repeat;
 }
 .wraper{
@@ -44,7 +50,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     width: 25%;
-    background-color: rgb(38, 237, 255);
+    background-color: var(--secondery);
     padding: 5%;
     padding-top: 3%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -54,14 +60,14 @@ main{
 }
 .info{
     text-align: left;
-    margin-top: 5%;
+    margin-top: 20%;
 }
 .profile,.projects{
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     width: 60%;
-    background-color: rgb(196, 251, 45);
+    background-color: var(--secondery);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .projects{
@@ -74,11 +80,27 @@ main{
     width: 40%;
     margin: 5%;
     height: 200px;
-    background-color: white;
+    background-color: var(--third);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .project:hover{
-    background-color: rgb(212, 212, 212);
+    background-color: var(--light);
+}
+fieldset{
+    background-color: var(--third);
+    border: var(--dark) 5px solid;
+    width: 70%;
+    margin: auto;
+    height: 100px;
+    text-align: left;
+    padding: 5%;
+    margin-bottom: 10%;
+}
+legend{
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+    font-size: 25px;
 }
 ul{
     width: 90%;
@@ -88,13 +110,20 @@ li{
     margin-bottom: 10%;
 }
 h1{
+    color: white;
+}
+h2{
     margin: 5% auto 5% auto;
     width: 100%;
     text-align: center;
 }
-h2{
-    margin: 10px;
+h3{
+    font-size: 200%;
+}
+h4{
+    font-size: 150%;
     color: white;
+    margin: 5%;
 }
 @media all and (max-width:750px){
     .skills, .contact ,.profile, .projects{

@@ -1,6 +1,6 @@
 import './index.css';
 
-let catigories=["profile", "education","projects", "langouges", "skills", "volintering", "contact info"]
+let catigories=[{key:"profile",value:"Israeli American citizen, 19 years old, finishing BCs in Computer Sience in Ashkelon College....."}, {key:"education",value:"For high school Mesivta Beit Shemesh, afeter went for a nother 3 years in Beit Medrash Derech Chaim and Ashkelon college "}, {key:"langouges",value:"speak English and Hebrew native speaker, and a bit of Arabic"},{key:"volintering",value:"EMT MDA Israel, Yedidim volinteer"}]
 let information=[{key:"name",value:"Yakov Bader"},{key:"adress",value:"Matityahu ......"},{key:"phone",value:"+972 53 734 4943"},{key:"linkin",value:"link"},{key:"email",value:"yakovbader@gmail.com"},{key:"github",value:"link........."}];
 
 function App() {
@@ -11,19 +11,20 @@ function App() {
         <br />
         <div className="info">
           {information.map(function(info) {
-            return  <p><b>{info.key}</b>:{info.value} </p>
+            return  <div><h3>{info.key}:</h3><h4>{info.value}</h4> </div>
           })}
         </div>
       </div> 
       <div className="profile">
-        <h1><u>Who Am I</u></h1>
-        <div>
-          {catigories.map(function(catigory) {
-              return  <p>{catigory} </p>
-          })}
-        </div>
-      </div> 
-    </div>
+        <h2><u>Who Am I</u></h2>
+        {catigories.map(function(catigory) {
+          return  <fieldset>
+            <legend>{catigory.key}</legend>
+            <p>{catigory.value}</p>
+          </fieldset>
+        })}
+      </div>
+    </div> 
     
   );
 }
