@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="wraper">
       <div className="contact">
-        <img className="profileImg"  src="https://media-exp1.licdn.com/dms/image/C4D03AQFZkI0q-ovt-g/profile-displayphoto-shrink_200_200/0/1627281231918?e=1642636800&v=beta&t=FIaafPVaOEzjQWxI3Jv8_jzxvxhztAi4Z_GmKU9bhGc"></img>
+        <img className="profileImg"  src="https://media-exp1.licdn.com/dms/image/C4D03AQHyDGZE6hifNQ/profile-displayphoto-shrink_400_400/0/1638950777757?e=1644451200&v=beta&t=zS_gdCQ_m7fla9C1gTv-ZUlS7U_wkABOs44Nf2BVeEo" alt="Profile-IMG"></img>
         <br />
         <div className="info">
           {information.map(function(info) {
