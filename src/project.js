@@ -1,7 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { unmountComponentAtNode } from "react-dom";
 import './index.css';
 
-let Skills=["Java Script", "Java","Full stack develpment", "HTML", "CSS", "MongoDB", "SQL","EJS"]
-let projects=["profile", "education","projects", "langouges", "skills", "volintering","sdfg"]
+import{catigory,projects} from './Data'
 
 function Projects() {
   return (
@@ -14,26 +16,56 @@ function Projects() {
       </div> 
       <div className="skills">
         <h2>My skills</h2>
-        <ul>
-          {Skills.map(function(skill) {
-              return  <Skill skill={skill}/>
+          {catigory.map(function(skills) {
+              return  <Skill skills={skills}/>
           })}
-        </ul>
       </div>   
     </div>
     );
 }
 function Project({project}) {
   return (
-    <div className="project">
+    <div onClick={()=>openReadme(project)} className="proj project">
       <h4><u>{project}</u></h4>
     </div>
     );
 }
 
-function Skill({skill}) {
+function Skill({skills}) {
   return (
-    <li>{skill}</li>
+    <fieldset className='catigory'>
+      <legend>{skills.cati}</legend>
+      <ul >
+        {skills.skills.map(function(skill){
+          return <li>{skill}</li>
+        })}
+      </ul>
+    </fieldset>
+    
     );
 }
+function openReadme(info){
+  document.querySelectorAll('proj').forEach(function(pro){
+    pro.classList.toggle('project');
+    //pro.classList.toggle('project');
+  })
+
+  if(document.getElementById('menu').hasChildNodes()){
+    unmountComponentAtNode(document.getElementById('menu'));
+  }else{
+    ReactDOM.render(<Readme info={info}/>,document.getElementById('menu'));
+  }
+}
+function Readme({info}){
+  return(
+    <div className='readme'>
+      <div onClick={openReadme}>
+        <div className="x x1"></div>
+        <div className="x x2"></div>
+      </div>
+      <h2>{info}</h2>
+    </div>
+  )
+}
+
 export default Projects;
