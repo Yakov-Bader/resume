@@ -3,15 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Projects from './project';
-import Header from './header'
+import Header from './header';
 
-fetch('http://localhost:5000/')
-    .then(response => response.json())
-    .then(data => alert(data));
-
-ReactDOM.render(<Header/>,document.getElementById('header'));
+const Data= require('./Data');
 
 
-ReactDOM.render(<Projects />,document.getElementById('root'));
+async  function getData(){
+    await  fetch('http://localhost:5000/')
+        .then(res =>res.json())
+        .then(data => {
+            Data.catigories=data[0];
+            Data.information=data[1];
+            Data.catigory =data[2];
+            Data.projects=data[3];
+            Data.infor=data[4];
+        }); 
+        
+    ReactDOM.render(<Header/>,document.getElementById('header'));
+    ReactDOM.render(<Projects />,document.getElementById('root'));
+    //ReactDOM.render(<App />,document.getElementById('root'));
+}
+getData();
 
-//ReactDOM.render(<App />,document.getElementById('root'));

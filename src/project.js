@@ -51,7 +51,10 @@ function openReadme(info){
   })
 
   if(document.getElementById('menu').hasChildNodes()){
-    unmountComponentAtNode(document.getElementById('menu'));
+    if(document.getElementById('menu').childNodes[0].className==='menu'){
+      document.getElementById('menuIMG').classList.toggle("change");
+    }
+    unmountComponentAtNode(document.getElementById('menu'));  
   }else{
     ReactDOM.render(<Readme info={info}/>,document.getElementById('menu'));
   }
@@ -64,6 +67,40 @@ function Readme({info}){
         <div className="x x2"></div>
       </div>
       <h2>{info}</h2>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   )
 }
