@@ -29,8 +29,14 @@ function Menu(){
     );
 }
 function openMenu(){
-  if(document.getElementById('menu').hasChildNodes()){
-    unmountComponentAtNode(document.getElementById('menu'));
+  let menu=document.getElementById('menu');
+  if(menu.hasChildNodes()){
+    if(menu.childNodes[0].className==='readme'){
+      unmountComponentAtNode(menu);
+      ReactDOM.render(<Menu />,document.getElementById('menu'));
+    }else{
+      unmountComponentAtNode(menu);
+    }
   }else{
     ReactDOM.render(<Menu />,document.getElementById('menu'));
   }

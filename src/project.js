@@ -25,8 +25,9 @@ function Projects() {
 }
 function Project({project}) {
   return (
-    <div onClick={()=>openReadme(project)} className="proj project">
-      <h4><u>{project}</u></h4>
+    <div onClick={()=>openReadme(project)} className="project">
+      <h4><u>{project.name}</u></h4>
+      <a href={project.link}>project on GitHub</a>
     </div>
     );
 }
@@ -45,18 +46,17 @@ function Skill({skills}) {
     );
 }
 function openReadme(info){
-  document.querySelectorAll('proj').forEach(function(pro){
-    pro.classList.toggle('project');
-    //pro.classList.toggle('project');
-  })
-
-  if(document.getElementById('menu').hasChildNodes()){
-    if(document.getElementById('menu').childNodes[0].className==='menu'){
+  let menu=document.getElementById('menu');
+  if(menu.hasChildNodes()){
+    if(menu.childNodes[0].className==='menu'){
       document.getElementById('menuIMG').classList.toggle("change");
-    }
-    unmountComponentAtNode(document.getElementById('menu'));  
+      unmountComponentAtNode(menu);
+      ReactDOM.render(<Readme info={info}/>,menu);
+    }else{
+      unmountComponentAtNode(menu);
+    }  
   }else{
-    ReactDOM.render(<Readme info={info}/>,document.getElementById('menu'));
+    ReactDOM.render(<Readme info={info}/>,menu);
   }
 }
 function Readme({info}){
@@ -66,24 +66,8 @@ function Readme({info}){
         <div className="x x1"></div>
         <div className="x x2"></div>
       </div>
-      <h2>{info}</h2>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <h2>{info.name}</h2>
+      <h2>{info.text}</h2>
       <br></br>
       <br></br>
       <br></br>
