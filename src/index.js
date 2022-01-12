@@ -7,7 +7,6 @@ import Header from './header';
 
 const Data= require('./Data');
 
-
 async  function getData(){
     await  fetch('http://localhost:5000/')
         .then(res =>res.json())
@@ -20,8 +19,9 @@ async  function getData(){
         }); 
         
     ReactDOM.render(<Header/>,document.getElementById('header'));
-    ReactDOM.render(<Projects />,document.getElementById('root'));
-    //ReactDOM.render(<App />,document.getElementById('root'));
+    // ReactDOM.render(<Projects />,document.getElementById('root'));
+    ReactDOM.render(<App />,document.getElementById('root'));
 }
-getData();
 
+
+getData();

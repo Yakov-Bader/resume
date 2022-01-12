@@ -27,7 +27,6 @@ function Project({project}) {
   return (
     <div onClick={()=>openReadme(project)} className="project">
       <h4><u>{project.name}</u></h4>
-      <a href={project.link}>project on GitHub</a>
     </div>
     );
 }
@@ -69,22 +68,7 @@ function Readme({info}){
       <h2>{info.name}</h2>
       <h2>{info.text}</h2>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <a href={info.link}>project on GitHub</a>
     </div>
   )
 }

@@ -23,7 +23,7 @@
     position: fixed;
     margin-bottom: 5px;
     height: 60px;
-    width: 100%;
+    width: 99.9%;
     margin-top: 0;
     top:0;
     background-color: var(--dark);
@@ -98,8 +98,8 @@ main{
     background-repeat: repeat;
 }
 .wraper{
-    padding: 0;
-    width: 100%;  
+    width: 100%;
+    text-align: center; 
 }
 .contact,.skills{
     display: flex;
@@ -222,6 +222,11 @@ h2{
     width: 100%;
     text-align: center;
 }
+a{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
 h3{
     font-size: 200%;
 }
@@ -238,6 +243,7 @@ h4{
     margin: auto;
     width: 80%;
     height: 80%;
+    text-align: center;
     background-color: var(--third);
 }
 .readme::-webkit-scrollbar {
@@ -268,11 +274,15 @@ h4{
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
 }
-@media all and (max-width:750px){
+@media all and (max-width:1000px){
     .skills, .contact ,.profile, .projects{
-        float: none;
-        width: 100%;
-        margin: auto;
+        display:block;
+        float: left;
+        width: 95%;
         margin-bottom: 3%;
+    }
+    .wraper{
+        display:block;
+        float: left;
     }
 }
